@@ -1,0 +1,7 @@
+<input type="text" [formControl]="searchControl">
+<div class="users">
+  <app-user-prev *ngFor="let user of model.users"
+                 routerLink="/user/{{user.login}}"
+                 [user]="user"></app-user-prev>
+</div>
+<button (click)="loadMore()" *ngIf="showMoreBtn()">Загрузить еще</button>

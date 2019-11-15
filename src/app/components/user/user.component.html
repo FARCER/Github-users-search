@@ -1,0 +1,42 @@
+<div class="user" *ngIf="user">
+  <img class="user__image" [src]="user.avatarUrl" alt="">
+  <div class="user__info">
+    <div class="user__item">
+      <span class="user__label">Ник</span>
+      <a class="user__link" [attr.href]="user.htmlUrl">{{user.login}}</a>
+    </div>
+    <div class="user__item">
+      <span class="user__label">Имя</span>
+      <span class="user__value">{{user.name}}</span>
+    </div>
+    <div class="user__item" *ngIf="user.bio">
+      <span class="user__label">Краткое описание</span>
+      <span class="user__value">{{user.bio}}</span>
+    </div>
+    <div class="user__item">
+      <span class="user__label">Following</span>
+      <ul class="user__list">
+        <li *ngFor="let follow of user.following">
+          <a [attr.href]="follow.html_url">{{follow.login}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="user__item">
+      <span class="user__label">Followers</span>
+      <ul class="user__list">
+        <li *ngFor="let follower of user.followers">
+          <a [attr.href]="follower.html_url">{{follower.login}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="user__item">
+      <span class="user__label">Репозитории</span>
+      <ul class="user__list">
+        <li *ngFor="let rep of user.repos">
+          <a [attr.href]="rep.html_url">{{rep.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
