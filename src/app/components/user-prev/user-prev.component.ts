@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
-import {IUserSmall} from '../user-small.interface';
+import {IUserSmall} from '../../interfaces/user-small.interface';
 
 @Component({
   selector: 'app-user-prev',

@@ -1,6 +1,38 @@
 :host {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &.user-show { justify-content: flex-start; }
   .users {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
+  input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 21px;
+    line-height: 22px;
+    margin-bottom: 50px;
+    padding: 8px 16px;
+    width: 800px;
+  }
+  button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    height: 32px;
+    width: 200px;
+    transition: all linear .3s;
+    &:hover {
+      background-color: #ccc;
+      color: #fff;
+    }
+  }
+  h1 { font-size: 25px; }
+  .count { margin-bottom: 20px; }
 }

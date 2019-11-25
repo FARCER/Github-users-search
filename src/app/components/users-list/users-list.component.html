@@ -1,7 +1,9 @@
+<h1>Поиск пользователей github </h1>
+<div class="count" *ngIf="model.count">Найдено: <span>{{model.count}}</span></div>
 <input type="text" [formControl]="searchControl">
 <div class="users">
   <app-user-prev *ngFor="let user of model.users"
-                 routerLink="/user/{{user.login}}"
-                 [user]="user"></app-user-prev>
+                 [user]="user"
+                 (click)="selectedUser(user.login)"></app-user-prev>
 </div>
 <button (click)="loadMore()" *ngIf="showMoreBtn()">Загрузить еще</button>

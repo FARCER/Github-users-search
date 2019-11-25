@@ -1,1 +1,2 @@
-<router-outlet></router-outlet>
+<app-users-list [ngClass]="{'user-show' : currentUser}" (userLogin)="selectedUser($event)"></app-users-list>
+<app-user [user]="currentUser" *ngIf="currentUser" (removeUser)="removeCurrentUser();"></app-user>

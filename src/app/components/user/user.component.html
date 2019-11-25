@@ -5,7 +5,7 @@
       <span class="user__label">Ник</span>
       <a class="user__link" [attr.href]="user.htmlUrl">{{user.login}}</a>
     </div>
-    <div class="user__item">
+    <div class="user__item" *ngIf="user.name">
       <span class="user__label">Имя</span>
       <span class="user__value">{{user.name}}</span>
     </div>
@@ -13,7 +13,7 @@
       <span class="user__label">Краткое описание</span>
       <span class="user__value">{{user.bio}}</span>
     </div>
-    <div class="user__item">
+    <div class="user__item" *ngIf="user.following.length">
       <span class="user__label">Following</span>
       <ul class="user__list">
         <li *ngFor="let follow of user.following">
@@ -21,7 +21,7 @@
         </li>
       </ul>
     </div>
-    <div class="user__item">
+    <div class="user__item" *ngIf="user.followers.length">
       <span class="user__label">Followers</span>
       <ul class="user__list">
         <li *ngFor="let follower of user.followers">
@@ -29,7 +29,7 @@
         </li>
       </ul>
     </div>
-    <div class="user__item">
+    <div class="user__item" *ngIf="user.repos.length">
       <span class="user__label">Репозитории</span>
       <ul class="user__list">
         <li *ngFor="let rep of user.repos">
@@ -38,5 +38,5 @@
       </ul>
     </div>
   </div>
-
+  <div class="close" (click)="close()"> <img src="https://image.flaticon.com/icons/svg/151/151882.svg" alt=""> </div>
 </div>
